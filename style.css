@@ -1,0 +1,25 @@
+.fieldset {
+	display: none;
+}
+
+.fieldset.active {
+	display: block;
+}
+
+.fieldset.ac {
+	display: flex;
+	flex-direction: column;
+}
+
+.fieldset__subset {
+	display: none;
+}
+
+.fieldset__subset.active {
+	display: block;
+}
+
+.calculated {
+	border: 2px solid black;
+	width:fit-content;
+}

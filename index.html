@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Document</title>
+</head>
+<body>
+	<div class="container">
+		<form name="form" class="form">
+			<fieldset  name="fieldsetTypeOfEstate">
+				<legend>Объект ипотеки</legend>
+				<input type="radio" id="apartment" name="typeOfEstate" value="apartment">
+				<label for="apartment">Квартира</label>
+				<input type="radio" id="house" name="typeOfEstate" value="house">
+				<label for="house">Жилой дом</label>
+				<input type="radio"  id="landLot" name="typeOfEstate" value="landLot">
+				<label for="landLot">Земельный участок</label>
+				<div class="fieldset__subset" id="typesOfApartment">
+					<input type="radio" id="buildingApartment" name="apartmentBuiltLevel" value="buildingApartment">
+					<label for="buildingApartment">Новостройка</label>
+					<input type="radio" id="readyApartment" name="apartmentBuiltLevel" value="readyApartment">
+					<label for="readyApartment">Готовое жилье</label>
+				</div>
+			</fieldset>
+			<fieldset name="fieldsetLoanParams" disabled>
+				<legend>Параметры кредита</legend>
+				<div class="banks">
+					<select name="selectedBankId" id="bankList" class="bank__list">
+						<option hidden value> --Выберите банк-- </option>
+						<option class="bank__list-one" value="9098c7d8-4cdc-4b69-8237-58d0255cca87">Банк Метрострой</option>
+						<option class="bank__list-one"value="ac9a52d8-591c-4137-98b3-961f4e5293db">Строй Трест №2</option>
+						<option class="bank__list-one"value="47dccc5a-1f20-4bb0-a3c1-72aa0e091665">ИП Пушкин А.С.</option>
+					</select>
+				</div>
+				<div class="amountForm">
+					<input name="amount" class="amount" type="number" placeholder="Укажи сумму">
+				</div>
+			</fieldset>
+			<fieldset name="insuranceTypes" id="insuranceTypes">
+				<legend>Что необходимо страховать?</legend>
+				<!-- <button disabled class="button">Жизнь</button>
+				<button disabled class="button">Имущество</button>
+				<button disabled class="button">Титул</button> -->
+				<div>
+					<input disabled type="checkbox" id="" name="lifeInsurance" value="lifeRisk">
+					<label for="lifeInsurance">Жизнь</label>
+				</div>
+				<div><input disabled type="checkbox" id="" name="estateInsurance" value="estateRisk">
+					<label for="estateInsurance">Имущество</label></div>
+				<div>
+					<input disabled type="checkbox" id="" name="titleInsurance" value="titleRisk">
+					<label for="titleInsurance">Титул</label>
+				</div>
+			</fieldset>
+			<fieldset class="fieldset" id="lifeRisk">
+				<legend>Страхование жизни</legend>
+				<div class="genderForm">
+					<p>Пол</p>
+					<p>Мужской</p>
+					<input class="genderList" name="gender" type="radio" value="male">
+					<p>Женский</p>
+					<input class="genderList" name="gender" type="radio" value="female">
+				</div>
+				<div>
+					<label class="lifeForm__dateOfBirth">
+						Дата рождения
+						<input type="date" id="dateOfBirth" name="age">
+					</label>
+				</div>
+				<div class="lifeForm__occupation">
+					<select name="occupation" class="lifeForm__occupation-list">
+						<option hidden value>Род занятий</option>
+						<option value=0>Администратор, Бухгалтер, Верстальщик, Воспитатель, Журналист, Инженер, Копирайтер, Медицинский работник, Педагог, Программист, Руководитель, Юрист</option>
+						<option value=1>Водитель, Военнослужащий, Инкассатор, Конвоир, Пожарный, Рабочий на производстве, Спасатель, Спортсмен, Телохранитель</option>
+					</select>
+				</div>
+				<div>
+					<legend>Наличие хронических заболеваний</legend>
+					<input type="checkbox" name="illness" value="1">
+				</div>
+			</fieldset>
+			<fieldset class="fieldset" id="estateRisk">
+				<legend>Страхование имущества</legend>
+				<div class="amountForm">
+					<input class="amount" type="number" placeholder="Год постройки" name="buildingYear">
+				</div>
+				<div>
+					<legend>деревянные стены и (или) перекрытия</legend>
+					<input type="checkbox" name="flammable" value="1">
+				</div>
+			</fieldset>
+			<fieldset class="fieldset" id="titleRisk">
+				<legend>Страхование титула</legend>
+				<div>
+					<legend>в собственности менее трех лет</legend>
+					<input type="checkbox" name="durationOfOwnership" value="1">
+				</div>
+			</fieldset>
+			<button type="button" class="result", id="count">Submit</button>
+			<fieldset class="fieldset" id="missingInformation">
+				<div id="missingInformationList">
+				</div>
+			</fieldset>
+			<div class="calculated"></div>
+		</form>
+	</div>
+	<script type="module" src="/MK/main.js"></script>
+</body>
+</html>
